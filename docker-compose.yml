@@ -1,0 +1,15 @@
+version: "3.8"
+
+networks:
+  sehati-network:
+    external: true
+
+services:
+  dass21-api:
+    build: .
+    container_name: dass21-api
+    ports:
+      - "8080:8080"
+    networks:
+      - sehati-network
+    restart: unless-stopped
